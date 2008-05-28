@@ -1,0 +1,23 @@
+<span style="white-space: nowrap"> <%= @ingredient.quantity %> <%= @ingredient.units_displayable %>
+<span id="<%= dom_id(@ingredient, "conversion") %>"><%= render :partial => 'ingredients/conversion' %> </span>
+</span>
+<span class="not_printed" id=<%= dom_id(@ingredient, "new_conversion")%> >
+  <%= render :partial => 'ingredients/link_to_new_conversion' %>
+</span>
+<span><%= link_to @ingredient.food.name, food_path(@ingredient.food) %></span>
+<span><%= @ingredient.prep_instructions %></span>
+<% unless params[:hide_costs] %>
+  <% if @ingredient.percent_yield && @ingredient.percent_yield < 100 %>
+    <span>Need to buy <%= @ingredient.purchase_quantity %> <%= @ingredient.units_displayable %> at <%= number_to_currency(@ingredient.cost) %> with a <%= @ingredient.percent_yield %> yield</span>
+  <% else %>
+    <span><%= number_to_currency(@ingredient.cost) %></span>
+  <% end %>
+<% end %>
+
+<% if params[:action] == 'edit' || params[:action] == 'update' %>
+  <span class="not_printed"><%= link_to_remote "edit", :url => edit_ingredient_path(@recipe, @ingredient), :method => :get %></span>
+  <span class="not_printed"><%= link_to_remote "remove", 
+            :url => ingredient_path(@recipe, @ingredient), 
+            :method => :delete,
+            :confirm => 'Are you sure?' %></span>
+<% end %>

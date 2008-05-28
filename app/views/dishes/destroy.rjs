@@ -1,0 +1,2 @@
+page.remove dom_id(@dish)
+page.replace_html dom_id(@menu, 'total'), number_to_currency(@menu.cost)

@@ -1,0 +1,8 @@
+<%= will_paginate @recipes %>
+<h1>Listing recipes</h1>
+<p>Sort by: <%= link_to 'Title', sort_param('search', Recipe, 'title') %>
+            <%= link_to 'Date', sort_param('search', Recipe, 'updated_at') %></p>
+<%= render :partial => @recipes %>
+<%= will_paginate @recipes %>
+<br />
+<%= link_to 'New recipe', new_recipe_path %>

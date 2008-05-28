@@ -1,0 +1,11 @@
+<h1>Editing dish</h1>
+
+<%= error_messages_for :dish %>
+
+<% form_for(:dish, :url => dish_path(:menu_id => @menu, :id => @dish), :html => { :method => :put }) do |f| %>
+  <p>Servings: <%= text_field :dish, :servings %></p>
+  <p>
+    <%= submit_tag "Update" %>
+  </p>
+<% end %>
+<%= link_to 'Back', menu_path(@menu) %>

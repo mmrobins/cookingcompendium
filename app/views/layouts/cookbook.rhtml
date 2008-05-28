@@ -1,0 +1,20 @@
+<%= render :partial => 'layouts/doctype' %>
+<head>
+  <%= render :partial => 'layouts/head' %>
+</head>
+<body>
+<div id="doc3" class="yui-t5">
+  <div id="Header" class="not_printed">
+    <%= render :partial => 'layouts/header' %>
+  </div>
+  <div id="hd" class="not_printed">
+    <p style="color: green"><%= flash[:notice] %></p>
+  </div>
+  <div id="bd">
+    <div id="yui-g">
+      <%= render :partial => 'layouts/search_box' %>
+    </div>
+    <%= yield  %>
+  </div>
+</body>
+</html>

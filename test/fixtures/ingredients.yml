@@ -1,0 +1,49 @@
+# == Schema Information
+# Schema version: 30
+#
+# Table name: ingredients
+#
+#  id                     :integer(11)   not null, primary key
+#  recipe_id              :integer(11)   not null
+#  food_id                :integer(11)   not null
+#  quantity               :decimal(10, 2 default(0.0)
+#  units                  :string(11)    default(""), not null
+#  created_at             :datetime      
+#  updated_at             :datetime      
+#  percent_yield          :integer(11)   
+#  prep_instructions      :string(255)   
+#  position               :integer(11)   
+#  conversions_to_display :text          
+#
+
+--- 
+ingredients_003: 
+  percent_yield: "100"
+  updated_at: <%= Time.now - 18 %>
+  units: cu
+  quantity: "2"
+  prep_instructions: melted
+  recipe_id: "2"
+  id: "3"
+  created_at: <%= Time.now - 18 %>
+  food_id: "3"
+ingredients_001: 
+  percent_yield: "100"
+  updated_at: <%= Time.now - 252 %>
+  units: lbs
+  quantity: "1"
+  prep_instructions: diced
+  recipe_id: "1"
+  id: "1"
+  created_at: <%= Time.now - 252 %>
+  food_id: "2"
+ingredients_002: 
+  percent_yield: "100"
+  updated_at: <%= Time.now - 222 %>
+  units: lbs
+  quantity: "1"
+  prep_instructions: sliced
+  recipe_id: "1"
+  id: "2"
+  created_at: <%= Time.now - 222 %>
+  food_id: "1"

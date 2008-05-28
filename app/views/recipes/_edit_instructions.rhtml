@@ -1,0 +1,7 @@
+<p>You can format the text using <%= link_to "Markdown Syntax", "http://daringfireball.net/projects/markdown/basics" %></p>
+<% remote_form_for(:recipe, @recipe, :url => recipe_path(@recipe), :html => { :method => :put }) do |f| %>
+  <%= f.text_area :instructions, :rows => 25, :cols => 70 %>
+  <p>
+    <%= submit_tag "Update" %>
+  </p>
+<% end %>

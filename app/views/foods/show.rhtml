@@ -1,0 +1,48 @@
+<div id="yui-main">
+  <div class="yui-g">
+    <p>
+      <strong><%=h @food.name %></strong> - <%= link_to "Edit", edit_food_path(@food) %>
+    </p>
+    
+    <p>
+      <b>Food type:</b>
+      <%=h @food.food_type %>
+    </p>
+    
+    <p>
+      <b>Purchase units:</b>
+      <%=h @food.purchase_units %>
+    </p>
+    
+    <p>
+      <b>Purchase quantity:</b>
+      <%=h @food.purchase_quantity %>
+    </p>
+    
+    <p>
+      <b>Purchase price:</b>
+      <%=h @food.purchase_price %>
+    </p>
+  </div>
+  <div class="yui-g">
+    <h3>Substitutes</h3>
+    <ul>
+    <% @food.substitutes.each do |sub| %>
+      <li><%= sub.name %></li>
+    <% end %>
+    </ul>
+    
+    <h3>Food Conversions</h3>
+    <p><%= link_to "New Conversion", new_food_conversion_path(@food) %></p>
+    <%= render :partial => 'food_conversions/list' %>
+    <h3>Recipes using <%= @food.name %></h2>
+    <% @food.recipes.group_by {|r| r.recipe_type}.each do |recipe_type, recipes| %>
+      <h4><%= recipe_type %></h4>
+      <ul>
+      <% recipes.each do |recipe| %>
+      <li><%= link_to recipe.title, recipe_path(recipe) %></li>
+      <% end %>
+      </ul>
+    <% end %>
+  </div>
+</div>

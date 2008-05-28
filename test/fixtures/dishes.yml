@@ -1,0 +1,26 @@
+# == Schema Information
+# Schema version: 30
+#
+# Table name: dishes
+#
+#  id         :integer(11)   not null, primary key
+#  recipe_id  :integer(11)   not null
+#  menu_id    :integer(11)   not null
+#  servings   :decimal(6, 2) 
+#  created_at :datetime      
+#  updated_at :datetime      
+#
+
+--- 
+dishes_001: 
+  id: 1
+  menu_id: 1
+  recipe_id: 1
+  servings: 10
+  
+dishes_002: 
+  id: 2
+  menu_id: 1
+  recipe_id: 2
+  servings: 100
+

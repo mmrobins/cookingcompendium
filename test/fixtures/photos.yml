@@ -1,0 +1,52 @@
+# == Schema Information
+# Schema version: 30
+#
+# Table name: photos
+#
+#  id                  :integer(11)   not null, primary key
+#  parent_id           :integer(11)   
+#  content_type        :string(255)   
+#  filename            :string(255)   
+#  thumbnail           :string(255)   
+#  size                :integer(11)   
+#  width               :integer(11)   
+#  height              :integer(11)   
+#  created_at          :datetime      
+#  updated_at          :datetime      
+#  recipe_id           :integer(11)   
+#  photographable_id   :integer(11)   
+#  photographable_type :string(255)   
+#  favorite            :boolean(1)    
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+photo_1:
+  content_type: image/png
+  updated_at: 2007-07-08 21:00:57
+  size: "3187"
+  thumbnail: 
+  photographable_type: Recipe
+  photographable_id: "1"
+  recipe_id: 
+  id: "1"
+  height: "60"
+  filename: hire.err.png
+  parent_id: 
+  favorite: "0"
+  created_at: 2007-07-08 21:00:57
+  width: "120" 
+photo_2:
+  content_type: image/png
+  updated_at: 2007-07-08 21:00:57
+  size: "3187"
+  thumbnail: thumb
+  photographable_type: 
+  photographable_id: 
+  recipe_id: 
+  id: "2"
+  height: "50"
+  filename: test_thumb.png
+  parent_id: "1"
+  favorite: "0"
+  created_at: 2007-07-08 21:00:57
+  width: "100"

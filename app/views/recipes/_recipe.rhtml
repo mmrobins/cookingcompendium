@@ -1,0 +1,22 @@
+<table>
+  <tr>
+    <td><%= image_tag(recipe.favorite_photo.public_filename(:thumb)) if recipe.photos.size > 0 %></td>
+    <td>
+      <h3><% if recipe.user_id == @current_user.id %>
+          <%= link_to h(recipe.title), edit_recipe_path(recipe)%>
+        <% else %>
+          <%= link_to h(recipe.title), recipe_path(recipe) %>
+        <% end %></h3>
+      <p>Submitted by: <%= link_to recipe.user.name, recipes_path(:user_id => recipe.user.id) %> Type: <%=h recipe.recipe_type %></p>
+      <p><%=h recipe.description %></p>
+      <p>Makes <%=h recipe.servings %> servings of <%=h recipe.serving_quantity %> <%=h recipe.serving_units %></p>
+      <p>Ingredients: <%=h recipe.ingredients_in_array.to_sentence %></p>
+    <td><%= render :partial => "rating/rating", :locals => { :asset => recipe } if @current_user %></td>
+    <td></td>
+    <td>
+      <%= link_to('Delete', recipe_path(recipe), 
+                  :confirm => 'Are you sure?', 
+                  :method => :delete ) if (@current_user && recipe.user_id = @current_user.id) %>
+    </td>
+  </tr>
+</table>

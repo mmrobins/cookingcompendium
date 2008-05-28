@@ -1,0 +1,22 @@
+<h1>Listing food</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Food type</th>
+    <th>Cost</th>
+  </tr>
+  
+<% for food in @foods %>
+  <tr>
+    <td><%=h food.name %></td>
+    <td><%=h food.food_type %></td>
+    <td><%= number_to_currency(food.purchase_price) %>/<%=h food.purchase_quantity %> <%=h food.purchase_units %></td>
+    <td><%= link_to 'Edit', edit_food_path(food) %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New food', new_food_path %>

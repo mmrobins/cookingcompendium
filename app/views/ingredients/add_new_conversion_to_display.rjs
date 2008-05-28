@@ -1,0 +1,2 @@
+page.replace_html dom_id(@ingredient, "conversion"), :partial => 'ingredients/conversion' 
+page.replace_html dom_id(@ingredient, "new_conversion"), :partial => 'ingredients/link_to_new_conversion' 

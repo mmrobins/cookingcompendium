@@ -1,0 +1,28 @@
+<h2><%=h @menu.name %></h2>
+
+<div id="recipes", style="float:right;">
+  <h3>Available Recipes</h3>
+  <table>
+    <% @available_recipes.each do |recipe| %>
+    <tr>
+      <td><%=h recipe.title %></td>
+      <td><%= link_to "Add", dishes_path(:menu_id => @menu, :recipe_id => recipe.id), :method => :post %></td>
+    </tr>
+    <% end %>
+  </table>
+</div>
+<div id="dishes">
+  <h3>Included Dishes</h3>
+  <table>
+  <% @menu.dishes.each do |dish| %>
+    <%= render :partial => "dishes/show", :locals => { :menu => @menu, :dish => dish } %>
+  <% end %>
+    <tr>
+      <td></td><td></td>
+      <td>Totals Cost:</td>
+      <td id="<%= dom_id(@menu, 'total') %>"><%= number_to_currency(@menu.cost) %></td>
+    </tr>
+  </table>
+</div>
+<%= link_to 'Edit', edit_menu_path(@menu) %> |
+<%= link_to 'Back', menus_path %>

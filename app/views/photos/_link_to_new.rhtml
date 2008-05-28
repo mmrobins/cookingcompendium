@@ -1,0 +1,5 @@
+  <div id="new_photo">
+    <h4><%= link_to_function "Add A Photo" do |page| 
+        	    page.replace_html "new_photo", :partial => 'photos/new' 
+      end %></h4>
+  </div>

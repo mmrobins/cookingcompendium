@@ -1,0 +1,17 @@
+<td class="not_printed">
+  <% unless @ingredient.first? %>
+    <%= link_to "first", 
+          move_ingredient_path(:recipe_id => @recipe, :id => @ingredient, :move_method => 'move_to_top'), 
+          :method => :put %>
+    <%= link_to "up", 
+          move_ingredient_path(:recipe_id => @recipe, :id => @ingredient, :move_method => 'move_higher'), 
+          :method => :put %>
+  <% end %>
+  <% unless @ingredient.last? %>
+    <%= link_to "down", 
+          move_ingredient_path(:recipe_id => @recipe, :id => @ingredient, :move_method => 'move_lower'), 
+          :method => :put %>
+    <%= link_to "last", 
+          move_ingredient_path(:recipe_id => @recipe, :id => @ingredient, :move_method => 'move_to_bottom'), 
+          :method => :put %>
+  <% end %></td>

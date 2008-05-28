@@ -1,0 +1,395 @@
+/*-------------------------------------------------
+HEADER
+-------------------------------------------------*/
+
+#Header {
+	/*width: 100%;*/
+	background: #99CC33;
+	padding: 1px 0 0 0;
+	margin: 0;
+	text-align: left;
+  position: relative;
+	}	
+
+#Header h1 /* client name */ {
+	padding: 0 0 10px 0;
+	margin: 7px 0 0 30px;
+	font-size: 24px;
+	font-weight: normal;
+	color: #c90;
+	text-align: left;
+	}	
+
+#Header h1 span /* project name */ {
+	/*padding: 0 0 7px 0;
+	margin: 0 0 5px 32px;*/
+	font-size: 16px;
+	font-weight: normal;
+	color: #fff;
+	border: none;
+	font-family: "Lucida Grande", arial, sans-serif;
+	}	
+
+#Header h3 {
+	padding: 0 30px 0 32px;
+	margin: 7px 0 0 0;
+	font-size: 9px;
+	font-weight: normal;
+	font-family: verdana;
+	text-align: left;
+}
+
+#Header h3.global {
+  position: relative;
+  float: right;
+  text-align: right;
+  width: 300px;
+}
+
+#Header h3 span#floatright {
+  text-align: right;
+  width: 300px;
+  position: relative;
+  float: right;
+}
+
+#Header h3 span.pipe {
+  opacity: 0.6;
+  filter: alpha(opacity=60);
+}
+
+#Header h3 a.current {
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#fresh_all h2 {
+	padding: 0 0 2px 0;
+	margin: 0;
+	border-bottom: 1px dotted #ccc;
+}
+
+#Header a:hover.image {
+	background-color: none;
+	background-color: transparent;
+}
+
+/*-------------------------------------------------
+TABS
+-------------------------------------------------*/
+
+#Tabs {
+	margin: 0 0 0 30px;
+	height: 25px;
+	padding: 0;
+}
+
+#Tabs ul {
+	margin: 0; padding: 0;
+}
+
+#Tabs li {
+	margin: 0; padding: 0;
+	display: inline;
+	list-style: none;
+	border: none;
+}
+
+#Tabs ul#MainTabs {
+}
+
+div#Tabs a:link,
+div#Tabs a:visited {
+  text-decoration: none;
+}
+
+#Tabs a:hover {
+	color: #fff;
+	background: #333;
+}
+
+#Tabs ul#MainTabs a:link, #Tabs ul#MainTabs a:visited {
+	font-size: 12px;
+	font-weight: normal;
+	padding: 4px 8px 6px 8px;
+	margin: 0;
+}
+
+#Tabs ul#MainTabs a:link.current, #Tabs ul#MainTabs a:visited.current {
+	border-bottom: 1px solid #e5e5e5;
+	color: #222;
+	font-weight: bold;
+	text-decoration: none;
+  margin: 0;
+}
+
+ #Tabs a:link, #Tabs a:visited {
+    background-color: #c00;
+    color: #fff;
+    border: 1px solid #900;
+    border-bottom: 1px solid #c00;
+  }
+
+  #Tabs ul#MainTabs a:link.current, #Tabs ul#MainTabs a:visited.current,
+  div#CategoryList a.current:link, div#CategoryList a.current:visited {
+    color: #900;
+  }
+
+  #Tabs a:hover {
+    color: #fc0;
+    background-color: #600;
+    border-bottom: 1px solid #600;
+  }
+
+/*-------------------------------------------------
+STAR RATINGS
+-------------------------------------------------*/   
+  .star-rating{
+      list-style:none;
+      margin: 0px;
+      padding:0px;
+      width: 150px;
+      height: 30px;
+      position: relative;
+      background: url(/images/star_rating.gif) top left repeat-x;        
+  }
+  .star-rating li{
+      padding:0px;
+      margin:0px;
+      /*\*/
+      float: left;
+      /* */
+  }
+  .star-rating li a{
+      display:block;
+      width:30px;
+      height: 30px;
+      text-decoration: none;
+      text-indent: -9000px;
+      z-index: 20;
+      position: absolute;
+      padding: 0px;
+  }
+  .star-rating li a:hover{
+      background: url(/images/star_rating.gif) left center;
+      z-index: 2;
+      left: 0px;
+      border:none;
+  }
+  .star-rating a.one-star{
+      left: 0px;
+  }
+  .star-rating a.one-star:hover{
+      width:30px;
+  }
+  .star-rating a.two-stars{
+      left:30px;
+  }
+  .star-rating a.two-stars:hover{
+      width: 60px;
+  }
+  .star-rating a.three-stars{
+      left: 60px;
+  }
+  .star-rating a.three-stars:hover{
+      width: 90px;
+  }
+  .star-rating a.four-stars{
+      left: 90px;
+  }    
+  .star-rating a.four-stars:hover{
+      width: 120px;
+  }
+  .star-rating a.five-stars{
+      left: 120px;
+  }
+  .star-rating a.five-stars:hover{
+      width: 150px;
+  }
+  .star-rating li.current-rating{
+      background: url(/images/star_rating.gif) left bottom;
+      position: absolute;
+      height: 30px;
+      display: block;
+      text-indent: -9000px;
+      z-index: 1;
+  }
+  .star-rating li.current-rating-rated {
+    background: url(/images/star_rating.gif) left bottom;
+    position: absolute;
+    height: 30px;
+    display: block;
+    text-indent: -9000px;
+    z-index: 1;
+  }
+
+body { background-color: #fff; color: #333; }
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+  margin: 2px;
+  padding: 2px;
+}
+
+h1 {
+  display: block;
+  font-size: 2em;
+  font-weight: bold;
+  margin: .67em 0;
+}
+
+h2 {
+  display: block;
+  font-size: 1.5em;
+  font-weight: bold;
+  margin: .83em 0;
+}
+
+h3 {
+  display: block;
+  font-size: 1.17em;
+  font-weight: bold;
+  margin: 1em 0;
+}
+
+h4 {
+  display: block;
+  font-weight: bold;
+  margin: 1.33em 0;
+}
+
+h5 {
+  display: block;
+  font-size: 0.83em;
+  font-weight: bold;
+  margin: 1.67em 0;
+}
+
+h6 {
+  display: block;
+  font-size: 0.67em;
+  font-weight: bold;
+  margin: 2.33em 0;
+}
+
+pre {
+  background-color: #eee;
+  padding: 10px;
+  font-size: 11px;
+}
+
+a { color: #000; }
+a:visited { color: #666; }
+a:hover { color: #fff; background-color:#000; }
+
+.fieldWithErrors {
+  padding: 2px;
+  background-color: red;
+  display: table;
+}
+
+#errorExplanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#errorExplanation p {
+  color: #333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#errorExplanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+div.uploadStatus {
+  margin: 5px;
+}
+
+div.progressBar {
+  margin: 5px;
+}
+
+div.progressBar div.border {
+  background-color: #fff;
+  border: 1px solid grey;
+  width: 100%;
+}
+
+div.progressBar div.background {
+  background-color: #333;
+  height: 18px;
+  width: 0%;
+}
+/* lists */
+
+ul, menu, dir {
+  display: block;
+  list-style-type: disc;
+  margin: 1em 0;
+  -moz-padding-start: 40px;
+}
+
+ol {
+  display: block;
+  list-style-type: decimal;
+  margin: 1em 0;
+  -moz-padding-start: 40px;
+}
+
+li {
+  display: list-item;
+  -moz-float-edge: margin-box;
+}
+
+/* nested lists have no top/bottom margins */
+ul ul,   ul ol,   ul dir,   ul menu,   ul dl,
+ol ul,   ol ol,   ol dir,   ol menu,   ol dl,
+dir ul,  dir ol,  dir dir,  dir menu,  dir dl,
+menu ul, menu ol, menu dir, menu menu, menu dl,
+dl ul,   dl ol,   dl dir,   dl menu,   dl dl {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* 2 deep unordered lists use a circle */
+ol ul,   ul ul,   menu ul,   dir ul,
+ol menu, ul menu, menu menu, dir menu,
+ol dir,  ul dir,  menu dir,  dir dir {
+  list-style-type: circle;
+}
+
+/* 3 deep (or more) unordered lists use a square */
+ol ol ul,     ol ul ul,     ol menu ul,     ol dir ul,
+ol ol menu,   ol ul menu,   ol menu menu,   ol dir menu,
+ol ol dir,    ol ul dir,    ol menu dir,    ol dir dir,
+ul ol ul,     ul ul ul,     ul menu ul,     ul dir ul,
+ul ol menu,   ul ul menu,   ul menu menu,   ul dir menu,
+ul ol dir,    ul ul dir,    ul menu dir,    ul dir dir,
+menu ol ul,   menu ul ul,   menu menu ul,   menu dir ul,
+menu ol menu, menu ul menu, menu menu menu, menu dir menu,
+menu ol dir,  menu ul dir,  menu menu dir,  menu dir dir,
+dir ol ul,    dir ul ul,    dir menu ul,    dir dir ul,
+dir ol menu,  dir ul menu,  dir menu menu,  dir dir menu,
+dir ol dir,   dir ul dir,   dir menu dir,   dir dir dir {
+  list-style-type: square;
+}
+

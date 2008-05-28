@@ -1,0 +1,44 @@
+# == Schema Information
+# Schema version: 30
+#
+# Table name: foods
+#
+#  id                :integer(11)   not null, primary key
+#  name              :string(30)    default(""), not null
+#  food_type         :string(20)    default(""), not null
+#  purchase_units    :string(10)    default(""), not null
+#  purchase_quantity :decimal(10, 2 not null
+#  purchase_price    :decimal(10, 2 not null
+#  created_at        :datetime      
+#  updated_at        :datetime      
+#  deleted_at        :datetime      
+#
+
+--- 
+foods_001: 
+  name: carrots
+  updated_at: <%= Time.now - 477 %>
+  purchase_quantity: "2.00"
+  purchase_price: "2.00"
+  id: "1"
+  purchase_units: lbs
+  food_type: produce
+  created_at: <%= Time.now - 477 %>
+foods_002: 
+  name: potatoes
+  updated_at: <%= Time.now - 423 %>
+  purchase_quantity: "1.00"
+  purchase_price: "1.00"
+  id: "2"
+  purchase_units: lbs
+  food_type: produce
+  created_at: <%= Time.now - 423 %>
+foods_003: 
+  name: chocolate
+  updated_at: <%= Time.now - 40 %>
+  purchase_quantity: "4.00"
+  purchase_price: "5.00"
+  id: "3"
+  purchase_units: cup
+  food_type: dried
+  created_at: <%= Time.now - 40 %>

@@ -1,0 +1,19 @@
+# == Schema Information
+# Schema version: 30
+#
+# Table name: menus
+#
+#  id          :integer(11)   not null, primary key
+#  name        :string(30)    default(""), not null
+#  created_at  :datetime      
+#  updated_at  :datetime      
+#  description :text          
+#
+
+--- 
+menus_001: 
+  id: 1
+  name: Dinner
+  updated_at: <%= Time.now - 511 %>
+  created_at: <%= Time.now - 511 %>
+

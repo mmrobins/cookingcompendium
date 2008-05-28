@@ -1,0 +1,39 @@
+  <p>
+    <b>Title</b><br />
+    <%= f.text_field :title, :size => 60 %>
+  </p>
+  
+  <p>
+    <b>Description</b><br />
+    <%= f.text_area :description, :cols => 60, :rows => 5 %>
+  </p>
+
+  <p>
+    <b>Type</b><br />
+    <%= f.select :recipe_type, Recipe::RECIPE_TYPES.collect {|type| [type, type]}, {:include_blank => true } %>
+  </p>
+  
+  <p>
+    <b>Servings</b><br />
+    <%= f.text_field :servings %>
+  </p>
+  
+  <p>
+    <b>Serving Size</b><br />
+    <%= f.text_field :serving_quantity %> <%= unit_select :recipe, :serving_units %>
+  </p>
+  
+  <p>
+    <b>Prep time in minutes</b><br />
+    <%= f.text_field :prep_time %>
+  </p>
+  
+  <p>
+    <b>Cooking time in minutes</b><br />
+    <%= f.text_field :cooking_time %>
+  </p>
+  
+  <p>
+    <b>Private</b><br />
+    <%= f.check_box :private %>
+  </p>

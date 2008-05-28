@@ -1,0 +1,10 @@
+<div class="yui-g">
+  <% if @recipe.photos.size > 0 %>
+    <div style="float:left; margin: 2px; padding: 5px;">
+      <p><%= link_to image_tag(@recipe.favorite_photo.public_filename(:thumb)), @recipe.favorite_photo.public_filename %><br />
+    </div>
+  <% end %>
+ 
+  <h2 id="recipeTitle"><%=h @recipe.title %></h2>
+  <h5><%=h @recipe.description %></h5>
+</div>

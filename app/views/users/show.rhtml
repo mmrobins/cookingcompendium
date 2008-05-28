@@ -1,0 +1,9 @@
+<p>Name: <%= @user.name %></p>
+<p>Login: <%= @user.login %></p>
+
+<p>Has Written <%= @user.recipes.size %> Recipes</p>
+<h5>Recent Recipes: (<%=link_to "All Recipes", recipes_path(:user_id => @user.id) %>)</h5>
+  <%= render :partial => @recipes %>
+<h5>Most Popular Recipes</h5>
+  <%= render :partial => 'recipes/recipe', :collection => @popular_recipes %>
+

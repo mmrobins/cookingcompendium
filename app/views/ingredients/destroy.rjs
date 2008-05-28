@@ -1,0 +1,2 @@
+page.remove dom_id(@ingredient)
+page.replace_html dom_id(@recipe, 'total'), number_to_currency(@recipe.cost)

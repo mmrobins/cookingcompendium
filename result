@@ -1,0 +1,227 @@
+(in /home/mattr/workspace/cookbook)
+Loaded suite /usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake/rake_test_loader
+Started
+........FEEE...................
+Finished in 0.360151 seconds.
+
+  1) Failure:
+test_quantity_to_food_purchase_units(IngredientTest) [./test/unit/ingredient_test.rb:23]:
+<"lbs"> expected to be != to
+<"lbs">.
+
+  2) Error:
+test_should_be_compitable_with_the_same_units_as_food(IngredientTest):
+NoMethodError: You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.updated_at=
+    /home/mattr/workspace/cookbook/config/../app/models/ingredient.rb:93:in `update_recipe_timestamp'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/callbacks.rb:333:in `send'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/callbacks.rb:333:in `callback'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/callbacks.rb:330:in `each'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/callbacks.rb:330:in `callback'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/callbacks.rb:243:in `create_or_update'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/base.rb:1545:in `save_without_validation'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/validations.rb:752:in `save_without_transactions'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/transactions.rb:129:in `save'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/connection_adapters/abstract/database_statements.rb:59:in `transaction'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/transactions.rb:95:in `transaction'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/transactions.rb:121:in `transaction'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/transactions.rb:129:in `save'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/base.rb:451:in `create'
+    ./test/unit/ingredient_test.rb:40:in `create'
+    ./test/unit/ingredient_test.rb:33:in `test_should_be_compitable_with_the_same_units_as_food'
+
+  3) Error:
+test_to_unit(IngredientTest):
+NoMethodError: You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.updated_at=
+    /home/mattr/workspace/cookbook/config/../app/models/ingredient.rb:93:in `update_recipe_timestamp'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/callbacks.rb:333:in `send'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/callbacks.rb:333:in `callback'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/callbacks.rb:330:in `each'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/callbacks.rb:330:in `callback'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/callbacks.rb:243:in `create_or_update'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/base.rb:1545:in `save_without_validation'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/validations.rb:752:in `save_without_transactions'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/transactions.rb:129:in `save'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/connection_adapters/abstract/database_statements.rb:59:in `transaction'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/transactions.rb:95:in `transaction'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/transactions.rb:121:in `transaction'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/transactions.rb:129:in `save'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/base.rb:451:in `create'
+    ./test/unit/ingredient_test.rb:40:in `create'
+    ./test/unit/ingredient_test.rb:17:in `test_to_unit'
+
+  4) Error:
+test_cost_should_be_sum_of_dish_costs(MealTest):
+NoMethodError: You have a nil object when you didn't expect it!
+The error occurred while evaluating nil.cost
+    /home/mattr/workspace/cookbook/config/../app/models/dish.rb:24:in `cost'
+    ./test/unit/meal_test.rb:15:in `test_cost_should_be_sum_of_dish_costs'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/associations/association_proxy.rb:123:in `each'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/associations/association_proxy.rb:123:in `send'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/associations/association_proxy.rb:123:in `method_missing_without_paginate'
+    /home/mattr/workspace/cookbook/config/../vendor/plugins/will_paginate/lib/will_paginate/finder.rb:81:in `method_missing'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/associations/has_many_association.rb:98:in `method_missing'
+    ./test/unit/meal_test.rb:14:in `test_cost_should_be_sum_of_dish_costs'
+
+31 tests, 42 assertions, 1 failures, 3 errors
+Loaded suite /usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake/rake_test_loader
+Started
+..............................F...................E....
+Finished in 1.791682 seconds.
+
+  1) Failure:
+default_test(PhotosControllerTest) [/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake/rake_test_loader.rb:5]:
+No tests were specified.
+
+  2) Error:
+test_should_allow_signup(UsersControllerTest):
+Errno::EPIPE: Broken pipe
+    /usr/lib/ruby/gems/1.8/gems/actionmailer-1.3.3/lib/action_mailer/base.rb:573:in `write'
+    /usr/lib/ruby/gems/1.8/gems/actionmailer-1.3.3/lib/action_mailer/base.rb:573:in `print'
+    /usr/lib/ruby/gems/1.8/gems/actionmailer-1.3.3/lib/action_mailer/base.rb:573:in `perform_delivery_sendmail'
+    /usr/lib/ruby/gems/1.8/gems/actionmailer-1.3.3/lib/action_mailer/base.rb:572:in `popen'
+    /usr/lib/ruby/gems/1.8/gems/actionmailer-1.3.3/lib/action_mailer/base.rb:572:in `perform_delivery_sendmail'
+    /usr/lib/ruby/gems/1.8/gems/actionmailer-1.3.3/lib/action_mailer/base.rb:451:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionmailer-1.3.3/lib/action_mailer/base.rb:451:in `deliver!'
+    /usr/lib/ruby/gems/1.8/gems/actionmailer-1.3.3/lib/action_mailer/base.rb:333:in `method_missing'
+    /home/mattr/workspace/cookbook/config/../app/models/user_observer.rb:3:in `after_create'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/observer.rb:154:in `send'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/observer.rb:154:in `update'
+    /usr/lib/ruby/1.8/observer.rb:185:in `notify_observers'
+    /usr/lib/ruby/1.8/observer.rb:184:in `each'
+    /usr/lib/ruby/1.8/observer.rb:184:in `notify_observers'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/callbacks.rb:364:in `notify'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/callbacks.rb:328:in `callback'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/callbacks.rb:255:in `create_without_timestamps'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/timestamp.rb:39:in `create'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/base.rb:1789:in `create_or_update_without_callbacks'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/callbacks.rb:242:in `create_or_update'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/base.rb:1551:in `save_without_validation!'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/validations.rb:762:in `save_without_transactions!'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/transactions.rb:133:in `save!'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/connection_adapters/abstract/database_statements.rb:59:in `transaction'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/transactions.rb:95:in `transaction'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/transactions.rb:121:in `transaction'
+    /usr/lib/ruby/gems/1.8/gems/activerecord-1.15.3/lib/active_record/transactions.rb:133:in `save!'
+    /home/mattr/workspace/cookbook/config/../app/controllers/users_controller.rb:10:in `create'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:1095:in `perform_action_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:632:in `call_filter'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:638:in `call_filter'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:438:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:637:in `call_filter'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:634:in `call_filter'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:638:in `call_filter'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:438:in `call'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:637:in `call_filter'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:619:in `perform_action_without_benchmark'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/benchmarking.rb:66:in `perform_action_without_rescue'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/rescue.rb:83:in `perform_action'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `send'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/base.rb:430:in `process_without_filters'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/filters.rb:624:in `process_without_session_management_support'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/session_management.rb:114:in `process_without_test'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/test_process.rb:15:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/test_process.rb:382:in `process'
+    /usr/lib/ruby/gems/1.8/gems/actionpack-1.13.3/lib/action_controller/test_process.rb:353:in `post'
+    ./test/functional/users_controller_test.rb:69:in `create_user'
+    ./test/functional/users_controller_test.rb:22:in `test_should_allow_signup'
+    /home/mattr/workspace/cookbook/config/../lib/authenticated_test_helper.rb:38:in `assert_difference'
+    ./test/functional/users_controller_test.rb:21:in `test_should_allow_signup'
+
+55 tests, 104 assertions, 1 failures, 1 errors
+Command failed with status (1): [/usr/bin/ruby1.8 -Ilib:test "/usr/lib/ruby...]
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:719:in `sh'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:726:in `call'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:726:in `sh'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:805:in `sh'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:740:in `ruby'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:805:in `ruby'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake/testtask.rb:117:in `define'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:823:in `verbose'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake/testtask.rb:102:in `define'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:392:in `call'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:392:in `execute'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:392:in `each'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:392:in `execute'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:362:in `invoke'
+/usr/lib/ruby/1.8/thread.rb:135:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:355:in `invoke'
+/usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/tasks/testing.rake:45
+/usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/tasks/testing.rake:43:in `collect'
+/usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/tasks/testing.rake:43
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:392:in `call'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:392:in `execute'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:392:in `each'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:392:in `execute'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:362:in `invoke'
+/usr/lib/ruby/1.8/thread.rb:135:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:355:in `invoke'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:369:in `invoke_prerequisites'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:1003:in `each'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:1003:in `send'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:1003:in `each'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:368:in `invoke_prerequisites'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:361:in `invoke'
+/usr/lib/ruby/1.8/thread.rb:135:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:355:in `invoke'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:1739:in `top_level'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:1739:in `each'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:1739:in `top_level'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:1761:in `standard_exception_handling'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:1733:in `top_level'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:1711:in `run'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:1761:in `standard_exception_handling'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:1708:in `run'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/bin/rake:7
+/usr/bin/rake:16:in `load'
+/usr/bin/rake:16
+Command failed with status (1): [/usr/bin/ruby1.8 -Ilib:test "/usr/lib/ruby...]
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:719:in `sh'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:726:in `call'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:726:in `sh'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:805:in `sh'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:740:in `ruby'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:805:in `ruby'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake/testtask.rb:117:in `define'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:823:in `verbose'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake/testtask.rb:102:in `define'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:392:in `call'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:392:in `execute'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:392:in `each'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:392:in `execute'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:362:in `invoke'
+/usr/lib/ruby/1.8/thread.rb:135:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:355:in `invoke'
+/usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/tasks/testing.rake:45
+/usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/tasks/testing.rake:43:in `collect'
+/usr/lib/ruby/gems/1.8/gems/rails-1.2.3/lib/tasks/testing.rake:43
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:392:in `call'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:392:in `execute'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:392:in `each'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:392:in `execute'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:362:in `invoke'
+/usr/lib/ruby/1.8/thread.rb:135:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:355:in `invoke'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:369:in `invoke_prerequisites'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:1003:in `each'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:1003:in `send'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:1003:in `each'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:368:in `invoke_prerequisites'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:361:in `invoke'
+/usr/lib/ruby/1.8/thread.rb:135:in `synchronize'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:355:in `invoke'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:1739:in `top_level'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:1739:in `each'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:1739:in `top_level'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:1761:in `standard_exception_handling'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:1733:in `top_level'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:1711:in `run'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:1761:in `standard_exception_handling'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/lib/rake.rb:1708:in `run'
+/usr/lib/ruby/gems/1.8/gems/rake-0.7.3/bin/rake:7
+/usr/bin/rake:16:in `load'
+/usr/bin/rake:16

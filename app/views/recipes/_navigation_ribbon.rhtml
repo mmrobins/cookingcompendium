@@ -1,0 +1,17 @@
+<div id="navigation_ribbon" class="not_printed">
+  <% new_params = params.dup.delete_if {|key, value| key == "id" || key == "action" || key == controller} %>
+<% unless params[:action] == "show" %>
+  <%= link_to "Show", recipe_path({:id => @recipe.id}.merge(new_params)) %> | 
+<% end %>
+<% if (@recipe.user_id == @current_user.id && params[:action] != "edit") %>
+  <%= link_to "Edit", edit_recipe_path({:id => @recipe}.merge(new_params)) %> | 
+<% end %>
+<% unless params[:action == "printable"] %>
+  <%= link_to "Printable", printable_recipe_path({:id => @recipe}.merge(new_params)) %> | 
+<% end %>
+<% if params[:hide_costs] %>
+  <%= link_to "Show Costs", :controller => "recipes", :action => params[:action], :id => @recipe.id %>
+<% else %>
+  <%= link_to "Hide Costs", {:action => params[:action], :id => @recipe.id, :hide_costs => 'true'}.merge(new_params.delete_if {|key,value| key == "hide_costs"}) %>
+<% end %>
+</div>

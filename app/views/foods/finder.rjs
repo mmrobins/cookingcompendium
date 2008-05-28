@@ -1,0 +1,9 @@
+if @food.class == Food
+  page.replace_html "found_food", :partial => "foods/show", :locals => {:food => @food}
+  page.replace_html "food_dependent_fields", :partial => "ingredients/form"
+  page.replace_html "submit", :partial => "ingredients/submit_button"
+else
+  page.replace_html "found_food", :partial => "foods/not_found", :locals => {:food => @food, :recipe => @recipe }
+  page.replace_html "food_dependent_fields", :partial => "foods/list" 
+  page.replace_html "submit", ""
+end

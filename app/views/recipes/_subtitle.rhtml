@@ -1,0 +1,16 @@
+<div class="yui-g">
+  <div class="yui-u first">
+      <h5>Makes <%= pluralize(params[:servings] || @recipe.servings, "Serving") %> of <%= pluralize(@recipe.serving_quantity, @recipe.serving_units) %></h5>
+      <h5>Prep time: <%=h @recipe.prep_time %> minutes</h5>
+      <% if @recipe.cooking_time %>
+        <h5>Cooking time: <%=h @recipe.cooking_time %> minutes</h5>
+      <% end %>
+      <h5><%= @recipe.private ? "Private" : "Public" %></h5>
+  </div>
+  <div class="yui-u">
+    <% unless params[:hide_costs] %>
+      <h5>Cost: <%= number_to_currency @recipe.cost %></h5>
+      <h5>Cost Per Serving: <%= number_to_currency @recipe.cost_per_serving %></h5>
+    <% end %>
+  </div>
+</div>

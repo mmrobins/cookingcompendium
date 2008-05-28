@@ -1,0 +1,5 @@
+if @recipe.errors.empty?
+  page.replace_html "instructions", :partial => "instructions", :locals => { :recipe => @recipe }
+else
+  page.replace_html "instructions", :partial => 'edit_instructions', :locals => {:recipe => @recipe}
+end

@@ -1,0 +1,24 @@
+<div id="<%= dom_id(asset, "rating") %>">
+<span style="font-size: .8em;">Average: <%= asset.rating %> (<%= asset.ratings.size %> Votes)</span>
+<ul class='star-rating'>
+    <% unless asset.rated_by_user?(current_user) %>
+      <li class='current-rating-rated' style='width:<%= (asset.rating * 30).to_i -%>px;'>
+        Currently <%= number_with_precision(asset.rating, 1) %>/5 Stars.
+      </li>
+    <% else %>
+      <li class='current-rating' style='width:<%= (asset.rating(current_user) * 30).to_i -%>px;'>
+        Currently <%= number_with_precision(asset.rating(current_user), 1) %>/5 Stars.
+      </li>
+    <% end %>
+    
+    <% number_words = %w[one two three four five] %>
+    <% 1.upto(5) do |nummy| %>
+      <li>
+          <%= link_to_remote( nummy.to_s, {:url => { :controller => "rating", 
+              :action => "rate", :id => asset.id, :rating => nummy}},
+              :class => number_words[nummy - 1] + "-" + ( (nummy > 1) ? 'stars' : 'star'), 
+              :title => nummy.to_s + ' ' + ( (nummy > 1) ? 'stars' : 'star') + ' out of 5') %>
+      </li>
+    <% end %>
+</ul>
+</div>

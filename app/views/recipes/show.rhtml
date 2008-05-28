@@ -1,0 +1,31 @@
+<div id="yui-main">
+  <div class="yui-b">
+
+    <div class="not_printed">
+    <%= render :partial => 'recipes/navigation_ribbon' %>
+    <%= render :partial => 'title' %>
+    <%= render :partial => 'subtitle' %>
+    <div class="yui-g">
+      <div class="yui-u first">
+        <%= render :partial => 'ingredients' %>
+      </div>
+      <div class="yui-u">
+        <h3>Instructions: </h3>
+        <%= render :partial => 'instructions' %>
+      </div>
+    </div>
+    <% if @recipe.updated_at %>
+      <div id="timestamp">Recipe last updated <%= @recipe.updated_at.strftime("%b %d %Y") %></div>
+    <% end %>
+    <%= render :partial => 'comments/list' %>
+  </div>
+</div>
+
+<div class="yui-b not_printed"><!-- YOUR NAVIGATION GOES HERE -->
+  <%= render :partial => "rating/rating", :locals => { :asset => @recipe } %>
+  <%= render :partial => 'photos' %>
+  <p>Meals that use this recipe:</p>
+  <% @recipe.menus.each do |menu| %>
+    <%= link_to menu.name, menu_path(menu) %><br />
+  <% end %>
+</div>

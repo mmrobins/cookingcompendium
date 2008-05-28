@@ -1,0 +1,10 @@
+<ul>
+<% @food.food_conversions.each do |conversion| %>
+<li>
+  <%= conversion.conversion_quantity %> <%= conversion.conversion_units %>
+  is equivalent to 
+  <%= conversion.equivalent_quantity %> <%= conversion.equivalent_units %> 
+  <%= link_to "Delete", food_conversion_path(@food, conversion), :method => :delete %>
+</li>
+<% end %>
+</ul>

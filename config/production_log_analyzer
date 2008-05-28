@@ -1,0 +1,3 @@
+#!/bin/bash
+pl_analyze /var/www/apps/cookbook/log/production.log -e mattr@mattrobinson.net -s "Rails Log Analysis"
+exit $STATUS

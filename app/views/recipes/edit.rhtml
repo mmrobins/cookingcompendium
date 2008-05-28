@@ -1,0 +1,31 @@
+<div id="yui-main">
+  <div class="yui-b">
+    <%= render :partial => 'navigation_ribbon' %>
+    <%= render :partial => 'title' %>
+    <%= render :partial => 'subtitle' %>
+    <span class="not_printed"><%= link_to 'Edit', edit_basics_recipe_path(@recipe) %></span>
+    <div class="yui-g">
+      <div class="yui-u first">
+        <%= link_to_function "New Ingredient" do |page| 
+	          page.replace_html "new_ingredient", :partial => 'ingredients/new_rjs', :locals => { :recipe => @recipe } 
+  	  end %>
+        <%= render :partial => 'ingredients' %>
+        <%= sortable_element 'list',   
+          :complete => visual_effect(:highlight, 'list'), 
+          :url => { :controller => 'ingredients', :action => "order" } %>
+      </div>
+      <div class="yui-u">
+        Instructions: <%= link_to_remote "Edit", :url => edit_recipe_path(@recipe), :method => :get %></h3>
+        <%= render :partial => 'instructions' %>
+      </div>
+      <%= render :partial => 'comments/list' %>
+    </div>
+  </div>
+</div>
+
+<div class="yui-b not_printed"><!-- YOUR NAVIGATION GOES HERE -->
+  <%= render :partial => "rating/rating", :locals => { :asset => @recipe } %>
+  <%= render :partial => "photos/link_to_new" %>
+  <%= render :partial => 'photos' %>
+
+</div>

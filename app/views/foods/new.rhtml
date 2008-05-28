@@ -1,0 +1,17 @@
+<h1>New food</h1>
+
+<%= error_messages_for :food %>
+
+<% form_for(:food, :url => foods_path(:recipe_id => params[:recipe_id])) do |f| %>
+  <%= render :partial => 'form', :locals => { :f => f } %>
+  <% if @recipe %>
+    <h1><%= @recipe.title %> Ingredient Information</h1>
+    <p>This must be filled in to automatically add this food to the recipe as an ingredient</p>
+    <%= render :partial => 'ingredients/form' %>
+  <% end %>
+  <p>
+    <%= submit_tag "Create" %>
+  </p>
+<% end %>
+
+<%= link_to 'Back', foods_path %>

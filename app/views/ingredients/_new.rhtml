@@ -1,0 +1,13 @@
+  <div id="found_food"></div>
+  <p>
+    <b>Food</b><br />
+    <%= text_field_with_auto_complete :food, :name %>
+  </p>
+  
+  
+  <%= observe_field "food_name",
+                    :frequency => 0.5,
+                    :url => { :controller => "foods", :action => "finder" },
+                    :with => "'recipe_id=#{@recipe.id}&food[name]=' + escape(value)"%>
+                    
+  <div id="food_dependent_fields"></div>

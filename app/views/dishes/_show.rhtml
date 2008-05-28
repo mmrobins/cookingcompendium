@@ -1,0 +1,8 @@
+    <tr id="<%= dom_id(dish) %>">
+      <td><%= link_to dish.recipe.title, recipe_path(:id => dish.recipe, :servings => dish.servings) %></td>
+      <td><%=h dish.recipe.recipe_type %></td>
+      <td><%= dish.servings %></td>
+      <td><%= number_to_currency(dish.cost) %></td>
+      <td><%= link_to 'Edit', edit_dish_path(:menu_id => menu, :id => dish) %></td>
+      <td><%= link_to_remote 'Remove', :url => dish_path(:menu_id => menu, :id => dish), :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>

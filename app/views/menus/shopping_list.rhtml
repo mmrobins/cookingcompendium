@@ -1,0 +1,9 @@
+<h1><%= @menu.name %></h1>
+<% @ingredients.sort_by {|ing| ing.food.name}.group_by {|ing| ing.food.food_type }.each do |type, ingredients| %>
+  <h3><%= type %></h3>
+  <ol>
+  <% ingredients.each do |ingredient| %>
+    <li><%= link_to ingredient.food.name, food_path(ingredient.food) %> - <%= ingredient.quantity %> <%= ingredient.units %></li>
+  <% end %>
+  </ol>
+<% end %>

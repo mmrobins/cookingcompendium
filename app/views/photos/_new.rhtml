@@ -1,0 +1,10 @@
+<% form_for(:photo, :url => photos_path(:recipe_id => @recipe), 
+                      :html => { :multipart => true }) do |f| -%>
+  <p>
+    <label for="photo">Attach a Photo:</label>
+    <%= f.file_field :uploaded_data %>
+  </p>
+  <p>
+    <%= submit_tag 'Attach' %>
+  </p>
+<% end %>

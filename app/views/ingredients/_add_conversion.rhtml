@@ -1,0 +1,9 @@
+<% remote_form_for(:ingredient, @ingredient, :url => {:controller => 'ingredients', 
+                                                      :action => "add_new_conversion_to_display", 
+                                                      :id => @ingredient.id,
+                                                      :recipe_id => @recipe.id}, 
+                                             :html => { :method => :put, :title => "stuff" }) do |f| %>
+<%= select_tag "new_unit", @ingredient.compatible_units.collect {|unit| "<option>#{unit}</option>"} %>
+<%= submit_tag "Add" %> 
+<%= link_to "New Conversion", new_food_conversion_path(:food_id => @ingredient.food.id, "food_conversion[conversion_quantity]" => @ingredient.quantity, "food_conversion[conversion_units]" => @ingredient.units ) %>
+<% end %>

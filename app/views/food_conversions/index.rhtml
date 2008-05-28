@@ -1,0 +1,18 @@
+<h1>Listing food_conversions</h1>
+
+<table>
+  <tr>
+  </tr>
+  
+<% for food_conversion in @food_conversions %>
+  <tr>
+    <td><%= link_to 'Show', food_conversion_path(food_conversion) %></td>
+    <td><%= link_to 'Edit', edit_food_conversion_path(food_conversion) %></td>
+    <td><%= link_to 'Destroy', food_conversion_path(food_conversion), :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New food_conversion', new_food_conversion_path %>

@@ -1,0 +1,61 @@
+# == Schema Information
+# Schema version: 30
+#
+# Table name: recipes
+#
+#  id               :integer(11)   not null, primary key
+#  title            :string(255)   default(""), not null
+#  recipe_type      :string(255)   
+#  prep_time        :integer(11)   
+#  instructions     :text          
+#  user_id          :integer(10)   not null
+#  created_at       :datetime      
+#  updated_at       :datetime      
+#  servings         :decimal(6, 2) 
+#  serving_quantity :decimal(6, 2) 
+#  serving_units    :string(255)   
+#  description      :text          
+#  cooking_time     :integer(6)    
+#  private          :boolean(1)    
+#
+
+--- 
+quentins_private_recipe: 
+  recipe_type: entree
+  serving_quantity: "2.00"
+  prep_time: "30"
+  title: Stew
+  id: "1"
+  servings: "4.00"
+  user_id: "1"
+  instructions: 
+  serving_units: cup
+  created_at: <%= (Time.now - 11.days).to_s :db %>
+  updated_at: <%= (Time.now - 11.days).to_s :db %>
+  private: true
+quentins_public_recipe: 
+  recipe_type: dessert
+  serving_quantity: "1.00"
+  prep_time: "60"
+  title: Chocolate Cake
+  id: "2"
+  servings: "6.00"
+  user_id: "1"
+  instructions: 
+  serving_units: ea
+  created_at: <%= (Time.now - 10.days).to_s :db %>
+  updated_at: <%= (Time.now - 10.days).to_s :db %>
+  private: false
+matts_private_recipe: 
+  recipe_type: dessert 
+  serving_quantity: "4.00"
+  prep_time: "30"
+  title: "Strawberry Shortcake"
+  id: "3"
+  servings: "4.00"
+  user_id: "3"
+  instructions: 
+  serving_units: lbs
+  created_at: <%= (Time.now - 10.days).to_s :db %>
+  updated_at: <%= (Time.now - 10.days).to_s :db %>
+  private: true

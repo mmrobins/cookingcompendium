@@ -1,0 +1,1 @@
+page.replace_html "new_comment", :partial => "comments/new"

@@ -1,0 +1,24 @@
+  <p>
+    <b>Name</b><br />
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <b>Food type</b><br />
+    <%= f.select :food_type, Food::FOOD_TYPES.collect {|t| [t, t]}, {:include_blank => true } %>
+  </p>
+
+  <p>
+    <b>Purchase units</b><br />
+    <%= unit_select :food, :purchase_units %>
+  </p>
+
+  <p>
+    <b>Purchase quantity</b><br />
+    <%= f.text_field :purchase_quantity %>
+  </p>
+
+  <p>
+    <b>Purchase price</b><br />
+    <%= f.text_field :purchase_price %>
+  </p>

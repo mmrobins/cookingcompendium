@@ -1,0 +1,7 @@
+if @ingredient.errors.empty?
+  page.replace_html "new_ingredient", ""
+  page.insert_html :bottom, "ingredients_list", :partial => 'ingredients/show', :locals => {:ingredient => @ingredient}
+  page.replace_html dom_id(@recipe, 'total'), number_to_currency(@recipe.cost)
+else
+  page.replace_html "new_ingredient", :partial => 'ingredients/new_rjs', :locals => {:recipe => @recipe, :ingredient => @ingredient}
+end

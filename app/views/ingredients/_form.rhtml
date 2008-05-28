@@ -1,0 +1,23 @@
+<table>
+  <tr>
+  <td>
+    <b>Quantity</b>
+    <%= text_field :ingredient, :quantity %>
+
+    <b>Units</b>
+    <%= select :ingredient, :units, Food::UNITS.collect {|unit| [unit, unit] }, {:include_blank => true } %>
+  </td>
+  
+  <td>
+    <b>Percent Yield</b> (only integer numbers necessary ex. 95 for 95%)
+    <% # 100 percent yield is assumed for new ingredients, but we don't want that for ingredients that already have a percent yield entered %>
+    <%= text_field :ingredient, :percent_yield, :value => (100 if @ingredient.new_record?) %>
+  </td>
+  </tr>
+  <tr>
+  <td>
+    <b>Preparation Instructions - optional</b> (ex. finely minced)
+    <%= text_field :ingredient, :prep_instructions %>
+  </td>
+  </tr>
+</table>

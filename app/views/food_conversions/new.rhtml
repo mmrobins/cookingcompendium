@@ -1,0 +1,19 @@
+<h1>New Conversion for <%= @food.name %></h1>
+
+<%= render :partial => 'food_conversions/list' %>
+<%= error_messages_for :food_conversion %>
+
+<% form_for(:food_conversion, :url => food_conversions_path(@food)) do |f| %>
+  <p>
+    First Conversion Quantity: <%= text_field :food_conversion, :conversion_quantity %>
+    Units: <%= unit_select :food_conversion, :conversion_units %>
+  </p>
+  
+  <p>
+    Equivalent Conversion Quantity: <%= text_field :food_conversion, :equivalent_quantity %>
+    Units: <%= unit_select :food_conversion, :equivalent_units %>
+  
+  <p>
+    <%= submit_tag "Create" %>
+  </p>
+<% end %>

@@ -1,0 +1,10 @@
+    <h3 class="global">
+      <% if @current_user && @current_user != :false %>
+        Logged In As: <%= link_to @current_user.login, user_path(@current_user) %> <%= link_to 'logout', logout_path %>
+      <% else %>
+        <%= link_to "login", login_path %>
+      <% end %> <%= render :partial => 'layouts/recent_recipes' %>
+    </h3>
+    <h1>Cooking Compendium</h1>
+
+    <%= render :partial => 'layouts/menu' %>

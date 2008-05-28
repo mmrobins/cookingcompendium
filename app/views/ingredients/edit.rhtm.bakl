@@ -1,0 +1,32 @@
+<h1>Editing ingredient</h1>
+
+<%= error_messages_for :ingredient %>
+
+<% form_for(:ingredient, :url => ingredient_path(@ingredient), :html => { :method => :put }) do |f| %>
+  <p>
+    <b>Recipe</b><br />
+    <%= f.text_field :recipe_id %>
+  </p>
+
+  <p>
+    <b>Food</b><br />
+    <%= f.text_field :food_id %>
+  </p>
+
+  <p>
+    <b>Quantity</b><br />
+    <%= f.text_field :quantity %>
+  </p>
+
+  <p>
+    <b>Units</b><br />
+    <%= f.text_field :units %>
+  </p>
+
+  <p>
+    <%= submit_tag "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', ingredient_path(@ingredient) %> |
+<%= link_to 'Back', ingredients_path %>

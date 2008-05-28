@@ -1,0 +1,30 @@
+# == Schema Information
+# Schema version: 30
+#
+# Table name: food_conversions
+#
+#  id                  :integer(11)   not null, primary key
+#  food_id             :integer(7)    
+#  conversion_quantity :decimal(10, 2 
+#  conversion_units    :string(10)    
+#  equivalent_quantity :decimal(10, 2 
+#  equivalent_units    :string(10)    
+#  created_at          :datetime      
+#  updated_at          :datetime      
+#
+
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+one:
+  id: 1
+  food_id: 1
+  conversion_quantity: 1
+  conversion_units: lbs
+  equivalent_quantity: .5
+  equivalent_units: gal
+two:
+  id: 2
+  food_id: 2
+  conversion_quantity: 1
+  conversion_units: lbs
+  equivalent_quantity: .5
+  equivalent_units: gal

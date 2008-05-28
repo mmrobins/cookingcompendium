@@ -1,0 +1,12 @@
+<h1>Editing food_conversion</h1>
+
+<%= error_messages_for :food_conversion %>
+
+<% form_for(:food_conversion, :url => food_conversion_path(@food_conversion), :html => { :method => :put }) do |f| %>
+  <p>
+    <%= submit_tag "Update" %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', food_conversion_path(@food_conversion) %> |
+<%= link_to 'Back', food_conversions_path %>

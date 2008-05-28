@@ -1,0 +1,6 @@
+<%= food.name %> 
+<strong>Type:</strong> <%= food.food_type %> 
+<strong>Cost:</strong><%= number_to_currency(food.purchase_price) %> 
+  per <%= food.purchase_quantity %>/<%= food.purchase_units %>
+  <%= link_to_function("Add", nil, :id => "cow") do |page|
+  end %>

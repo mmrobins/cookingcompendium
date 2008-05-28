@@ -1,0 +1,5 @@
+<ul>
+<% @foods.each do |food| %>
+  <li><%= render :partial => 'foods/show', :locals => {:food => food } %></li>
+<% end %>
+</ul>
