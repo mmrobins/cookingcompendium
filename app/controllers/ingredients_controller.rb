@@ -105,7 +105,7 @@ class IngredientsController < ApplicationController
     @ingredient.destroy
 
     respond_to do |format|
-      format.html { redirect_to ingredients_url }
+      format.html { redirect_to recipe_ingredients_url }
       format.js
       format.xml  { head :ok }
     end

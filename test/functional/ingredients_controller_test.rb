@@ -60,6 +60,6 @@ class IngredientsControllerTest < Test::Unit::TestCase
     delete :destroy, :recipe_id => @recipe, :id => @recipe.ingredients.first.id
     assert_equal old_count-1, Ingredient.count
     
-    assert_redirected_to ingredients_path
+    assert_redirected_to recipe_ingredients_path
   end
 end

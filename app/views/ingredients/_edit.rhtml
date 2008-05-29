@@ -1,5 +1,5 @@
 <p><%= @ingredient.food.name %></p>
-<% remote_form_for :ingredient, @ingredient, :url => ingredient_path(:recipe_id => @recipe, :id => @ingredient), :method => :put do |f| %>
+<% remote_form_for :ingredient, @ingredient, :url => recipe_ingredient_path(:recipe_id => @recipe, :id => @ingredient), :method => :put do |f| %>
   <%= render :partial => 'ingredients/form', :locals => {:f => f} %>
   <%= submit_tag "Edit" %>
 <% end %>
