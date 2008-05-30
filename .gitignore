@@ -2,3 +2,5 @@
 db/schema.rb
 db/schema.sql
 public/photos
+config/database.yml
+tmp/*

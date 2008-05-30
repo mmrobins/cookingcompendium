@@ -15,7 +15,7 @@ development:
   adapter: mysql
   database: cookbook_development
   username: root
-  password: 
+  password: rugby8
   host: localhost
   socket: /var/run/mysqld/mysqld.sock
 
@@ -26,7 +26,7 @@ test:
   adapter: mysql
   database: cookbook_test
   username: root
-  password: 
+  password: rugby8
   host: localhost
   socket: /var/run/mysqld/mysqld.sock
 
@@ -34,7 +34,7 @@ production:
   adapter: mysql
   database: cookbook_production
   username: root
-  password: 
+  password: rugby8
   host: localhost
   socket: /var/run/mysqld/mysqld.sock
 
