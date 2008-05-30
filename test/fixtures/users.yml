@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 30
+# Schema version: 34
 #
 # Table name: users
 #
@@ -15,7 +15,6 @@
 #  activation_code           :string(40)    
 #  activated_at              :datetime      
 #  name                      :string(255)   
-#  deleted_at                :datetime      
 #
 
 quentin:

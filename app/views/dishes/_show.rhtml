@@ -3,6 +3,6 @@
       <td><%=h dish.recipe.recipe_type %></td>
       <td><%= dish.servings %></td>
       <td><%= number_to_currency(dish.cost) %></td>
-      <td><%= link_to 'Edit', edit_dish_path(:menu_id => menu, :id => dish) %></td>
-      <td><%= link_to_remote 'Remove', :url => dish_path(:menu_id => menu, :id => dish), :confirm => 'Are you sure?', :method => :delete %></td>
+      <td><%= link_to 'Edit', edit_menu_dish_path(:menu_id => menu, :id => dish) %></td>
+      <td><%= link_to_remote 'Remove', :url => menu_dish_path(:menu_id => menu, :id => dish), :confirm => 'Are you sure?', :method => :delete %></td>
     </tr>

@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 30
+# Schema version: 34
 #
 # Table name: recipes
 #
@@ -9,7 +9,6 @@
 #  prep_time        :integer(11)   
 #  instructions     :text          
 #  user_id          :integer(10)   not null
-#  public           :boolean(1)    
 #  created_at       :datetime      
 #  updated_at       :datetime      
 #  servings         :decimal(6, 2) 

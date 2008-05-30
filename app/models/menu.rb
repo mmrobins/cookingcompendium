@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 30
+# Schema version: 34
 #
 # Table name: menus
 #
@@ -8,6 +8,7 @@
 #  created_at  :datetime      
 #  updated_at  :datetime      
 #  description :text          
+#  user_id     :integer(11)   
 #
 
 class Menu < ActiveRecord::Base

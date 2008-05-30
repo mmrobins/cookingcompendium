@@ -7,6 +7,7 @@
         <% else %>
           <%= link_to h(recipe.title), recipe_path(recipe) %>
         <% end %></h3>
+      <% debugger %>
       <p>Submitted by: <%= link_to recipe.user.name, recipes_path(:user_id => recipe.user.id) %> Type: <%=h recipe.recipe_type %></p>
       <p><%=h recipe.description %></p>
       <p>Makes <%=h recipe.servings %> servings of <%=h recipe.serving_quantity %> <%=h recipe.serving_units %></p>

@@ -3,7 +3,7 @@
 <%= render :partial => 'food_conversions/list' %>
 <%= error_messages_for :food_conversion %>
 
-<% form_for(:food_conversion, :url => food_conversions_path(@food)) do |f| %>
+<% form_for(:food_conversion, :url => food_food_conversions_path(@food)) do |f| %>
   <p>
     First Conversion Quantity: <%= text_field :food_conversion, :conversion_quantity %>
     Units: <%= unit_select :food_conversion, :conversion_units %>

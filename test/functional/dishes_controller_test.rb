@@ -43,6 +43,6 @@ class DishesControllerTest < Test::Unit::TestCase
     delete :destroy, :id => @menu.dishes.first, :menu_id => @menu
     assert_equal old_count-1, Dish.count
     
-    assert_redirected_to dishes_path
+    assert_redirected_to menu_dishes_path
   end
 end

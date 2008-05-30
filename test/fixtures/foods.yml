@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 30
+# Schema version: 34
 #
 # Table name: foods
 #
@@ -11,7 +11,6 @@
 #  purchase_price    :decimal(10, 2 not null
 #  created_at        :datetime      
 #  updated_at        :datetime      
-#  deleted_at        :datetime      
 #
 
 --- 
