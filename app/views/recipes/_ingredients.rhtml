@@ -1,8 +1,8 @@
 <h3>Ingredients</h3>
 <div id="new_ingredient"></div>
-<ul id="ingredients_list" style="list-style: none;"> 
+<ul id="list" style="list-style: none;"> 
 <% @recipe.ingredients.each do |@ingredient| %>
-    <li id="<%= dom_id(@ingredient) %>">
+    <li id="item_<%= @ingredient.id %>">
       <%= render :partial => 'ingredients/show' %>
     </li>
 <% end %>

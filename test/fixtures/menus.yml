@@ -1,5 +1,5 @@
 # == Schema Information
-# Schema version: 34
+# Schema version: 30
 #
 # Table name: menus
 #
@@ -8,7 +8,6 @@
 #  created_at  :datetime      
 #  updated_at  :datetime      
 #  description :text          
-#  user_id     :integer(11)   
 #
 
 --- 

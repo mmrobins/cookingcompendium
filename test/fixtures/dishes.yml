@@ -1,11 +1,11 @@
 # == Schema Information
-# Schema version: 34
+# Schema version: 30
 #
 # Table name: dishes
 #
 #  id         :integer(11)   not null, primary key
 #  recipe_id  :integer(11)   not null
-#  menu_id    :integer(11)   
+#  menu_id    :integer(11)   not null
 #  servings   :decimal(6, 2) 
 #  created_at :datetime      
 #  updated_at :datetime      

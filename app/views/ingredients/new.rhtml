@@ -3,7 +3,7 @@
 <%= link_to_remote "test", :update => "test", :url => { :action => 'auto_complete_for_food_name', :recipe_id => @recipe }, :method => :get  %>
 <%= error_messages_for :ingredient %>
 
-<% form_for :ingredient, :url => recipe_ingredients_path(:recipe_id => @recipe) do |f| %>
+<% form_for :ingredient, :url => ingredients_path(:recipe_id => @recipe) do |f| %>
   <%= render :partial => 'ingredients/new', :locals => {:f => f} %>
   <p>
     <%= submit_tag "Create" %>

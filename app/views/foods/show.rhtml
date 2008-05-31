@@ -33,7 +33,7 @@
     </ul>
     
     <h3>Food Conversions</h3>
-    <p><%= link_to "New Conversion", new_food_food_conversion_path(@food) %></p>
+    <p><%= link_to "New Conversion", new_food_conversion_path(@food) %></p>
     <%= render :partial => 'food_conversions/list' %>
     <h3>Recipes using <%= @food.name %></h2>
     <% @food.recipes.group_by {|r| r.recipe_type}.each do |recipe_type, recipes| %>
