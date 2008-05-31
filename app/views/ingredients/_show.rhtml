@@ -14,7 +14,7 @@
   <% end %>
 <% end %>
 
-<% if params[:action] == 'edit' || params[:action] == 'update' %>
+<% if params[:action] == 'edit' || params[:action] == 'update' || params[:action] == 'create' %>
   <span class="not_printed"><%= link_to_remote "edit", :url => edit_recipe_ingredient_path(@recipe, @ingredient), :method => :get %></span>
   <span class="not_printed"><%= link_to_remote "remove", 
             :url => recipe_ingredient_path(@recipe, @ingredient), 
