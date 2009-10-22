@@ -1,8 +1,7 @@
-require File.dirname(__FILE__) + '/../test_helper'
+require 'test_helper'
 
-class IngredientTest < Test::Unit::TestCase
-  fixtures :ingredients
-  
+class IngredientTest < ActiveSupport::TestCase
+
   @@ingredient_default_values = {
     :recipe_id => 1,
     :food_id => 1,
@@ -12,11 +11,11 @@ class IngredientTest < Test::Unit::TestCase
     :prep_instructions => "chop finely",
     :position => "1"
   }
-  
+
   def test_creating_ingredient_should_change_recipe_updated_at
     recipe = Recipe.find 1
     original = recipe.updated_at
-    ingredient = create 
+    ingredient = create
     after_create = recipe.reload.updated_at
     assert original < after_create
   end
@@ -43,25 +42,25 @@ class IngredientTest < Test::Unit::TestCase
     ingredient = create
     assert_equal ingredient.to_unit.units, ingredient.units
   end
-  
+
   def test_quantity_to_food_purchase_units
     ingredient = create(:units => "g")
     assert_not_equal ingredient.units, ingredient.food.purchase_units
     assert_equal ingredient.quantity_to_food_purchase_units, (ingredient.to_unit >> ingredient.food.purchase_units).scalar
   end
-  
+
   def test_cost
     ingredient = Ingredient.find(1)
     assert_equal ingredient.cost, ingredient.quantity_to_food_purchase_units * ingredient.food.cost_per_unit
   end
-  
+
   def test_should_be_compitable_with_the_same_units_as_food
     ingredient = create
     assert_equal ingredient.compatible_units, ingredient.food.compatible_units
   end
-  
+
   private
-  
+
   def create(options = {})
     Ingredient.create(@@ingredient_default_values.merge(options))
   end

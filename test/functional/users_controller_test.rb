@@ -4,7 +4,7 @@ require 'users_controller'
 # Re-raise errors caught by the controller.
 class UsersController; def rescue_action(e) raise e end; end
 
-class UsersControllerTest < Test::Unit::TestCase
+class UsersControllerTest < ActionController::TestCase
   # Be sure to include AuthenticatedTestHelper in test/test_helper.rb instead
   # Then, you can remove it from this and the units test.
   include AuthenticatedTestHelper
@@ -55,18 +55,18 @@ class UsersControllerTest < Test::Unit::TestCase
       assert_response :success
     end
   end
-  
+
   def test_should_activate_user
     assert_nil User.authenticate('aaron', 'test')
     get :activate, :activation_code => users(:aaron).activation_code
     assert_redirected_to '/'
     assert_not_nil flash[:notice]
     assert_equal users(:aaron), User.authenticate('aaron', 'test')
-  end 
+  end
 
   protected
     def create_user(options = {})
-      post :create, :user => { :name => "quick reaver", :login => 'quire', :email => 'quire@example.com', 
+      post :create, :user => { :name => "quick reaver", :login => 'quire', :email => 'quire@example.com',
         :password => 'quire', :password_confirmation => 'quire' }.merge(options)
     end
 end

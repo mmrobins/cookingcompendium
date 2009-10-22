@@ -4,7 +4,7 @@ require 'recipes_controller'
 # Re-raise errors caught by the controller.
 class RecipesController; def rescue_action(e) raise e end; end
 
-class RecipesControllerTest < Test::Unit::TestCase
+class RecipesControllerTest < ActionController::TestCase
   fixtures :recipes
 
   def setup
@@ -24,7 +24,7 @@ class RecipesControllerTest < Test::Unit::TestCase
   def test_should_redirect_to_index_if_not_authorized_to_edit
     # logged in as quentin we should get redirected if we try
     # to edit matt's private recipes
-    get :edit, :id => recipes(:matts_private_recipe) 
+    get :edit, :id => recipes(:matts_private_recipe)
     assert_redirected_to recipes_path
   end
 
@@ -45,10 +45,10 @@ class RecipesControllerTest < Test::Unit::TestCase
     get :new
     assert_response :success
   end
-  
+
   def test_should_create_recipe
     old_count = Recipe.count
-    post :create, :recipe => { :title => "Oatmeal", 
+    post :create, :recipe => { :title => "Oatmeal",
                                :recipe_type => "side",
                                :prep_time => 10,
                                :user_id => 1,
@@ -57,7 +57,7 @@ class RecipesControllerTest < Test::Unit::TestCase
                                :serving_units => "cu",
                                :private => true }
     assert_equal old_count+1, Recipe.count
-    
+
     # We should immediately start editing the recipe since
     # this phase of creation hasn't allowed us to add ingredients yet
     assert_redirected_to edit_recipe_path(assigns(:recipe))
@@ -72,17 +72,17 @@ class RecipesControllerTest < Test::Unit::TestCase
     get :edit, :id => 1
     assert_response :success
   end
-  
+
   def test_should_update_recipe
     put :update, :id => 1, :recipe => {:prep_time => 15 }
     assert_redirected_to edit_recipe_path(assigns(:recipe))
   end
-  
+
   def test_should_destroy_recipe
     old_count = Recipe.count
     delete :destroy, :id => 1
     assert_equal old_count-1, Recipe.count
-    
+
     assert_redirected_to recipes_path
   end
 end

@@ -4,7 +4,7 @@ require 'ingredients_controller'
 # Re-raise errors caught by the controller.
 class IngredientsController; def rescue_action(e) raise e end; end
 
-class IngredientsControllerTest < Test::Unit::TestCase
+class IngredientsControllerTest < ActionController::TestCase
   fixtures :ingredients, :recipes
 
   def setup

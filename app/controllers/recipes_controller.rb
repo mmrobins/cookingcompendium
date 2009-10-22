@@ -10,7 +10,7 @@ class RecipesController < ApplicationController
     session[:recent_recipes] = Array.new unless session[:recent_recipes]
     session[:recent_recipes] << (@recipe) unless session[:recent_recipes].include? @recipe
   end
-   
+
   def authorized_to_edit?
     @recipe = Recipe.find(params[:id])
     unless @recipe.user_id == @current_user.id
@@ -23,7 +23,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.find(params[:id])
     if @recipe.private && !logged_in?
       flash[:notice] = "Please login to view that recipe"
-      access_denied 
+      access_denied
     elsif @recipe.private && (@current_user.id != @recipe.user_id)
       flash[:notice] = "You're not authorized to view that recipe"
       redirect_to recipes_path
@@ -45,7 +45,7 @@ class RecipesController < ApplicationController
                    :order => sortable_order('search', Recipe, 'title'),
                    :page => params[:page])
     else
-      @recipes = Recipe.paginate(:all,
+      @recipes = Recipe.paginate(
                    :conditions => ["NOT private OR user_id = ?", @current_user.id],
                    :order => sortable_order('search', Recipe, 'id'),
                    :page => params[:page])
@@ -100,7 +100,7 @@ class RecipesController < ApplicationController
       format.xml  { render :xml => @recipe.to_xml }
     end
   end
-  
+
   # This allows editing the title, servings and other basic details
   def edit_basics
     @recipe = Recipe.find(params[:id])

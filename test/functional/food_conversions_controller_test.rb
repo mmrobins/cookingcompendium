@@ -4,7 +4,7 @@ require 'food_conversions_controller'
 # Re-raise errors caught by the controller.
 class FoodConversionsController; def rescue_action(e) raise e end; end
 
-class FoodConversionsControllerTest < Test::Unit::TestCase
+class FoodConversionsControllerTest < ActionController::TestCase
   fixtures :food_conversions, :foods
 
   def setup
@@ -19,7 +19,7 @@ class FoodConversionsControllerTest < Test::Unit::TestCase
     get :new, :food_id => 1
     assert_response :success
   end
-  
+
   def test_should_create_food_conversion
     old_count = FoodConversion.count
     post :create, :food_conversion => {:conversion_quantity => 1,
@@ -29,12 +29,12 @@ class FoodConversionsControllerTest < Test::Unit::TestCase
     assert_equal old_count+1, FoodConversion.count
     assert_redirected_to food_path(1)
   end
-  
+
   def test_should_destroy_food_conversion
     old_count = FoodConversion.count
     delete :destroy, :id => @food_conversion.id, :food_id => @food_conversion.food_id
     assert_equal old_count-1, FoodConversion.count
-    
+
     assert_redirected_to food_path(@food_conversion.food_id)
   end
 end

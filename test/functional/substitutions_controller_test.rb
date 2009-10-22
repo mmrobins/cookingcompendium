@@ -4,7 +4,7 @@ require 'substitutions_controller'
 # Re-raise errors caught by the controller.
 class SubstitutionsController; def rescue_action(e) raise e end; end
 
-class SubstitutionsControllerTest < Test::Unit::TestCase
+class SubstitutionsControllerTest < ActionController::TestCase
   def setup
     @controller = SubstitutionsController.new
     @request    = ActionController::TestRequest.new

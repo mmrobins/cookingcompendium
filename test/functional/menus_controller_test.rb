@@ -4,7 +4,7 @@ require 'menus_controller'
 # Re-raise errors caught by the controller.
 class MenusController; def rescue_action(e) raise e end; end
 
-class MenusControllerTest < Test::Unit::TestCase
+class MenusControllerTest < ActionController::TestCase
   fixtures :menus
 
   def setup
@@ -24,12 +24,12 @@ class MenusControllerTest < Test::Unit::TestCase
     get :new
     assert_response :success
   end
-  
+
   def test_should_create_menu
     old_count = Menu.count
     post :create, :menu => {:name => "Winter Seasonal" }
     assert_equal old_count+1, Menu.count
-    
+
     assert_redirected_to menu_path(assigns(:menu))
   end
 
@@ -42,17 +42,17 @@ class MenusControllerTest < Test::Unit::TestCase
     get :edit, :id => 1
     assert_response :success
   end
-  
+
   def test_should_update_menu
     put :update, :id => 1, :menu => { }
     assert_redirected_to menu_path(assigns(:menu))
   end
-  
+
   def test_should_destroy_menu
     old_count = Menu.count
     delete :destroy, :id => 1
     assert_equal old_count-1, Menu.count
-    
+
     assert_redirected_to menus_path
   end
 end

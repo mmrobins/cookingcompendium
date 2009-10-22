@@ -4,7 +4,7 @@ require 'comments_controller'
 # Re-raise errors caught by the controller.
 class CommentsController; def rescue_action(e) raise e end; end
 
-class CommentsControllerTest < Test::Unit::TestCase
+class CommentsControllerTest < ActionController::TestCase
   fixtures :comments, :recipes, :users
 
   def setup
@@ -16,13 +16,13 @@ class CommentsControllerTest < Test::Unit::TestCase
     @recipe = Recipe.find 1
     login_as(:quentin)
   end
-  
+
   def test_should_create_comment
     old_count = Comment.count
     @current_user = User.find 1
     post :create, :comment => {:comment => "cow"}, :recipe_id => @recipe.id
     assert_equal old_count+1, Comment.count
-    
+
     assert_redirected_to recipe_path(@recipe)
   end
 
@@ -30,7 +30,7 @@ class CommentsControllerTest < Test::Unit::TestCase
 #    get :edit, :id => 1
 #    assert_response :success
 #  end
-#  
+#
 #  def test_should_update_comment
 #    put :update, :id => 1, :comment => { }
 #    assert_redirected_to comment_path(assigns(:comment))

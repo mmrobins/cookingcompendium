@@ -1,6 +1,6 @@
-require File.dirname(__FILE__) + '/../test_helper'
+require 'test_helper'
 
-class SubstitutionTest < Test::Unit::TestCase
+class SubstitutionTest < ActiveSupport::TestCase
   fixtures :substitutions
 
   # Replace this with your real tests.

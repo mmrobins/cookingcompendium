@@ -1,8 +1,6 @@
-require File.dirname(__FILE__) + '/../test_helper'
+require 'test_helper'
 
-class CommentTest < Test::Unit::TestCase
-  fixtures :comments
-
+class CommentTest < ActiveSupport::TestCase
   # Replace this with your real tests.
   def test_truth
     assert true

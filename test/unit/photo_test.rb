@@ -1,8 +1,6 @@
-require File.dirname(__FILE__) + '/../test_helper'
+require 'test_helper'
 
-class PhotoTest < Test::Unit::TestCase
-  fixtures :photos
-
+class PhotoTest < ActiveSupport::TestCase
   # Replace this with your real tests.
   def test_truth
     assert true

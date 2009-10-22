@@ -4,7 +4,7 @@ require 'foods_controller'
 # Re-raise errors caught by the controller.
 class FoodsController; def rescue_action(e) raise e end; end
 
-class FoodsControllerTest < Test::Unit::TestCase
+class FoodsControllerTest < ActionController::TestCase
   fixtures :foods
 
   def setup
@@ -24,16 +24,16 @@ class FoodsControllerTest < Test::Unit::TestCase
     get :new
     assert_response :success
   end
-  
+
   def test_should_create_food
     old_count = Food.count
-    post :create, :food => {:name => "kidney beans", 
-                            :food_type => "dry", 
-                            :purchase_units => "lb", 
+    post :create, :food => {:name => "kidney beans",
+                            :food_type => "dry",
+                            :purchase_units => "lb",
                             :purchase_quantity => 1,
                             :purchase_price => 1 }
     assert_equal old_count+1, Food.count
-    
+
     assert_redirected_to food_path(assigns(:food))
   end
 
@@ -46,17 +46,17 @@ class FoodsControllerTest < Test::Unit::TestCase
     get :edit, :id => 1
     assert_response :success
   end
-  
+
   def test_should_update_food
     put :update, :id => 1, :food => { }
     assert_redirected_to food_path(assigns(:food))
   end
-  
+
   def test_should_destroy_food
     old_count = Food.count
     delete :destroy, :id => 1
     assert_equal old_count-1, Food.count
-    
+
     assert_redirected_to food_path(1)
   end
 end

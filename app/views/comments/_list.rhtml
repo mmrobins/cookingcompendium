@@ -2,8 +2,8 @@
   <h2>Comments</h2>
    <% @recipe.comments.each do |comment| %>
      <h5><%= comment.user.name %> - <%= comment.created_at %></h5>
-	 <p><%= comment.comment %></p>
+     <p><%= comment.comment %></p>
    <% end %>
-   <%= link_to_remote "New Comment", :url => new_comment_path(:recipe_id => @recipe), :method => :get %>
+   <%= link_to_remote "New Comment", :url => new_recipe_comment_path(:recipe_id => @recipe), :method => :get %>
 </div>
 <div id="new_comment"></div>

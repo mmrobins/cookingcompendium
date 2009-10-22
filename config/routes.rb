@@ -1,7 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
 
   map.resources :searches
-  
+
   map.resources :menus do |menu|
     menu.resources :dishes
   end
@@ -9,14 +9,14 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :users do |user|
     user.resources :recipes
   end
-  
+
   map.resources :sessions
   map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate'
   map.resources :purchase_options
 
   map.resources :foods, :collection => { :finder => :post} do |food|
     food.resources :purchase_options
-    food.resources :food_conversions  
+    food.resources :food_conversions
   end
 
   map.resources :recipes, :member => { :printable => :get, :edit_basics => :get } do |recipe|
@@ -24,15 +24,15 @@ ActionController::Routing::Routes.draw do |map|
                                    :member => { :move => :put,
                                                 :add_new_conversion_to_display => :put }
     recipe.resources :photos
-    recipe.resources :comments  
+    recipe.resources :comments
   end
-  
+
   map.signup '/signup', :controller => 'users', :action => 'new'
   map.login  '/login', :controller => 'sessions', :action => 'new'
   map.logout '/logout', :controller => 'sessions', :action => 'destroy'
 
   # The priority is based upon order of creation: first created -> highest priority.
-  
+
   # Sample of regular route:
   # map.connect 'products/:id', :controller => 'catalog', :action => 'view'
   # Keep in mind you can assign values other than :controller and :action
@@ -41,7 +41,7 @@ ActionController::Routing::Routes.draw do |map|
   # map.purchase 'products/:id/purchase', :controller => 'catalog', :action => 'purchase'
   # This route can be invoked with purchase_url(:id => product.id)
 
-  # You can have the root of your site routed by hooking up '' 
+  # You can have the root of your site routed by hooking up ''
   # -- just remember to delete public/index.html.
   map.home '', :controller => "recipes"
 
