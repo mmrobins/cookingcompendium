@@ -24,8 +24,8 @@ class BasicTest < Test::Unit::TestCase
   def test_should_normalize_content_types_to_array
     assert_equal %w(pdf), PdfAttachment.attachment_options[:content_type]
     assert_equal %w(pdf doc txt), DocAttachment.attachment_options[:content_type]
-    assert_equal ['image/jpeg', 'image/pjpeg', 'image/gif', 'image/png', 'image/x-png'], ImageAttachment.attachment_options[:content_type]
-    assert_equal ['pdf', 'image/jpeg', 'image/pjpeg', 'image/gif', 'image/png', 'image/x-png'], ImageOrPdfAttachment.attachment_options[:content_type]
+    assert_equal ['image/jpeg', 'image/pjpeg', 'image/gif', 'image/png', 'image/x-png', 'image/jpg'], ImageAttachment.attachment_options[:content_type]
+    assert_equal ['pdf', 'image/jpeg', 'image/pjpeg', 'image/gif', 'image/png', 'image/x-png', 'image/jpg'], ImageOrPdfAttachment.attachment_options[:content_type]
   end
   
   def test_should_sanitize_content_type
@@ -53,5 +53,12 @@ class BasicTest < Test::Unit::TestCase
     
     @attachment.filename = 'foo.bar.baz'
     assert_equal 'foo.bar_blah.baz', @attachment.thumbnail_name_for(:blah)
+  end
+  
+  def test_should_require_valid_thumbnails_option
+    klass = Class.new(ActiveRecord::Base)
+    assert_raise ArgumentError do
+      klass.has_attachment :thumbnails => []
+    end
   end
 end

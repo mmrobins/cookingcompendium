@@ -6,7 +6,7 @@
     <% @available_recipes.each do |recipe| %>
     <tr>
       <td><%=h recipe.title %></td>
-      <td><%= link_to "Add", dishes_path(:menu_id => @menu, :recipe_id => recipe.id), :method => :post %></td>
+      <td><%= link_to "Add", menu_dishes_path(:menu_id => @menu, :recipe_id => recipe.id), :method => :post %></td>
     </tr>
     <% end %>
   </table>

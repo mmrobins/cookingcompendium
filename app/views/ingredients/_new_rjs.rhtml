@@ -2,7 +2,7 @@
 
 <%= error_messages_for :ingredient %>
 
-<% remote_form_for :ingredient, :url => ingredients_path(:recipe_id => recipe) do |f| %>
+<% remote_form_for :ingredient, :url => recipe_ingredients_path(:recipe_id => recipe) do |f| %>
   <%= render :partial => 'ingredients/new', :locals => {:f => f} %>
   <%# The submit button doesn't show up until a food is found %>
   <div id="submit"></div>

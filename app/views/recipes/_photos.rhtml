@@ -1,4 +1,4 @@
 <% @recipe.photos.each do |photo| %>
   <%= link_to image_tag(photo.public_filename(:thumb)), photo.public_filename %><br />
-  <%= link_to "Delete", photo_path(:recipe_id => @recipe, :id => photo), :method => :delete, :confirm => 'Are you sure?' %><br />
+  <%= link_to "Delete", recipe_photo_path(:recipe_id => @recipe, :id => photo), :method => :delete, :confirm => 'Are you sure?' %><br />
 <% end %>

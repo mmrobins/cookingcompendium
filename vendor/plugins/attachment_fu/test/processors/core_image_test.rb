@@ -1,14 +1,14 @@
 require File.expand_path(File.join(File.dirname(__FILE__), '..', 'test_helper'))
 
-class ImageScienceTest < Test::Unit::TestCase
-  attachment_model ImageScienceAttachment
+class CoreImageTest < Test::Unit::TestCase
+  attachment_model CoreImageAttachment
 
-  if Object.const_defined?(:ImageScience)
+  if Object.const_defined?(:OSX)
     def test_should_resize_image
       attachment = upload_file :filename => '/files/rails.png'
       assert_valid attachment
       assert attachment.image?
-      # test image science thumbnail
+      # test core image thumbnail
       assert_equal 42, attachment.width
       assert_equal 55, attachment.height
       
@@ -25,7 +25,7 @@ class ImageScienceTest < Test::Unit::TestCase
     end
   else
     def test_flunk
-      puts "ImageScience not loaded, tests not running"
+      puts "CoreImage not loaded, tests not running"
     end
   end
 end

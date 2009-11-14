@@ -25,17 +25,17 @@ class IngredientsControllerTest < ActionController::TestCase
     get :new, :recipe_id => @recipe
     assert_response :success
   end
-  
+
   def test_should_create_ingredient
     old_count = Ingredient.count
-    post :create, :recipe_id => @recipe, 
+    post :create, :recipe_id => @recipe,
                   :food => {:name => "carrots"},
                   :ingredient => {:quantity => 1,
                                   :units => "oz",
                                   :percent_yield => "100",
                                   :position => 1}
     assert_equal old_count+1, Ingredient.count
-    
+
     assert_redirected_to recipe_path(@recipe)
   end
 
@@ -49,17 +49,17 @@ class IngredientsControllerTest < ActionController::TestCase
     get :edit, :id => recipe.ingredients.first.id, :recipe_id => recipe.id
     assert_response :success
   end
-  
+
   def test_should_update_ingredient
     put :update, :recipe_id => @recipe, :id => @recipe.ingredients.first, :ingredient => {:percent_yield => 75 }
     assert_redirected_to recipe_path(assigns(:recipe))
   end
-  
+
   def test_should_destroy_ingredient
     old_count = Ingredient.count
     delete :destroy, :recipe_id => @recipe, :id => @recipe.ingredients.first.id
     assert_equal old_count-1, Ingredient.count
-    
-    assert_redirected_to ingredients_path
+
+    assert_redirected_to recipe_ingredients_path
   end
 end

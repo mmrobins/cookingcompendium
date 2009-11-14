@@ -34,6 +34,10 @@ module Technoweenie # :nodoc:
       #     access_key_id: <your key>
       #     secret_access_key: <your key>
       #
+      # You can change the location of the config path by passing a full path to the :s3_config_path option.
+      #
+      #   has_attachment :storage => :s3, :s3_config_path => (RAILS_ROOT + '/config/s3.yml')
+      #
       # === Required configuration parameters
       #
       # * <tt>:access_key_id</tt> - The access key id for your S3 account. Provided by Amazon.
@@ -128,20 +132,15 @@ module Technoweenie # :nodoc:
           end
 
           begin
-            @@s3_config = YAML.load_file(RAILS_ROOT + '/config/amazon_s3.yml')[ENV['RAILS_ENV']].symbolize_keys
-          rescue
-            raise ConfigFileNotFoundError.new('File RAILS_ROOT/config/amazon_s3.yml not found')
+            @@s3_config_path = base.attachment_options[:s3_config_path] || (RAILS_ROOT + '/config/amazon_s3.yml')
+            @@s3_config = @@s3_config = YAML.load(ERB.new(File.read(@@s3_config_path)).result)[RAILS_ENV].symbolize_keys
+          #rescue
+          #  raise ConfigFileNotFoundError.new('File %s not found' % @@s3_config_path)
           end
 
           @@bucket_name = s3_config[:bucket_name]
 
-          Base.establish_connection!(
-            :access_key_id     => s3_config[:access_key_id],
-            :secret_access_key => s3_config[:secret_access_key],
-            :server            => s3_config[:server],
-            :port              => s3_config[:port],
-            :use_ssl           => s3_config[:use_ssl]
-          )
+          Base.establish_connection!(s3_config.slice(:access_key_id, :secret_access_key, :server, :port, :use_ssl, :persistent, :proxy))
 
           # Bucket.create(@@bucket_name)
 
@@ -157,7 +156,7 @@ module Technoweenie # :nodoc:
         end
         
         def self.port_string
-          @port_string ||= s3_config[:port] == (s3_config[:use_ssl] ? 443 : 80) ? '' : ":#{s3_config[:port]}"
+          @port_string ||= (s3_config[:port].nil? || s3_config[:port] == (s3_config[:use_ssl] ? 443 : 80)) ? '' : ":#{s3_config[:port]}"
         end
 
         module ClassMethods
@@ -288,7 +287,7 @@ module Technoweenie # :nodoc:
             if save_attachment?
               S3Object.store(
                 full_filename,
-                temp_data,
+                (temp_path ? File.open(temp_path) : temp_data),
                 bucket_name,
                 :content_type => content_type,
                 :access => attachment_options[:s3_access]

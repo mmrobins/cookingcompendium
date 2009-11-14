@@ -56,7 +56,7 @@ class DishesController < ApplicationController
     @dish.destroy
 
     respond_to do |format|
-      format.html { redirect_to dishes_url }
+      format.html { redirect_to menu_dishes_path }
       format.js
       format.xml  { head :ok }
     end

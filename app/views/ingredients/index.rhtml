@@ -14,13 +14,13 @@
     <td><%=h ingredient.food_id %></td>
     <td><%=h ingredient.quantity %></td>
     <td><%=h ingredient.units %></td>
-    <td><%= link_to 'Show', ingredient_path(@recipe, ingredient) %></td>
-    <td><%= link_to 'Edit', edit_ingredient_path(@recipe, ingredient) %></td>
-    <td><%= link_to 'Delete', ingredient_path(@recipe, ingredient), :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'Show', recipe_ingredient_path(@recipe, ingredient) %></td>
+    <td><%= link_to 'Edit', edit_recipe_ingredient_path(@recipe, ingredient) %></td>
+    <td><%= link_to 'Delete', recipe_ingredient_path(@recipe, ingredient), :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>
 
 <br />
 
-<%= link_to 'New ingredient', new_ingredient_path %>
+<%= link_to 'New ingredient', new_recipe_ingredient_path %>
